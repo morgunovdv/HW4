@@ -20,6 +20,7 @@ namespace Counter
                 {
                     mes += Handler2.Mess;
                     mes();
+                    break;
                 }
             }
         }
