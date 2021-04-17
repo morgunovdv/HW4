@@ -7,7 +7,7 @@ namespace Counter
         static void Main(string[] args)
         {
             Counter counter = new Counter();
-            counter.GetCount(101);
+            counter.GetCount(100);
             Console.ReadKey();
         }
     }

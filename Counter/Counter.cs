@@ -13,7 +13,7 @@ namespace Counter
 
         public void GetCount(int n)
         {
-            for (int i = 1; i<n; i++)
+            for (int i = 1; i<n+1; i++)
             {
                 Console.WriteLine(i);
                 if (i == 77)
