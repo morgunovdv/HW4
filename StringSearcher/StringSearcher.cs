@@ -8,16 +8,15 @@ namespace StringSearcher
 {
     class StringSearcher
     {
-        public delegate void Word(string word);
+        public delegate string Word(string word);
         Word wrd = Print;
 
 
-
+        
         public void Search(List<string> str)
         {
             Console.WriteLine("Введите искомое слово");
             string word = Console.ReadLine();
-
             foreach (string s in str)
             {
                 if (word == s)
@@ -27,15 +26,16 @@ namespace StringSearcher
                 }
             }
         }
-        private static void Print(string word)
+
+        private static string Print(string word)
         {
                 if (true)
                 {
-                    Console.WriteLine($"Искомое слово {word} есть в списке");
+                    return ($"Искомое слово {word} есть в списке");
                 }
                 else
                 {
-                    Console.WriteLine("Искомое слово отсутствует");
+                    return ("Искомое слово отсутствует");
                 }
         }
 

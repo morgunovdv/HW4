@@ -7,7 +7,7 @@ namespace StringSearcher
     {
         static void Main(string[] args)
         {
-            StringSearcher str1 = new StringSearcher();
+            StringSearcher word = new StringSearcher();
             string s = null;
             Console.WriteLine("Введите список слов");
 
@@ -17,7 +17,7 @@ namespace StringSearcher
                 s = Console.ReadLine();
                 str.Add(s);
             }
-            str1.Search(str);
+            word.Search(str);
             Console.ReadKey();
         }
     }
