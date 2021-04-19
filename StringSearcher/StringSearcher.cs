@@ -8,9 +8,12 @@ namespace StringSearcher
 {
     class StringSearcher
     {
-        public void Search()
+        public static void Search(List<string> str)
         {
-            List<string> search = new List<string>();
+            foreach (string s in str)
+            {
+                Console.WriteLine($"Слово {s.} состоит из {s.Length} букв");
+            }
         }
     }
 }
