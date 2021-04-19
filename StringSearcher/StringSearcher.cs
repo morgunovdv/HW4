@@ -8,12 +8,36 @@ namespace StringSearcher
 {
     class StringSearcher
     {
-        public static void Search(List<string> str)
+        public delegate void Word(string word);
+        Word wrd = Print;
+
+
+
+        public void Search(List<string> str)
         {
+            Console.WriteLine("Введите искомое слово");
+            string word = Console.ReadLine();
+
             foreach (string s in str)
             {
-                Console.WriteLine($"Слово {s.} состоит из {s.Length} букв");
+                if (word == s)
+                {
+                    wrd(word);
+                    break;
+                }
             }
         }
+        private static void Print(string word)
+        {
+                if (true)
+                {
+                    Console.WriteLine($"Искомое слово {word} есть в списке");
+                }
+                else
+                {
+                    Console.WriteLine("Искомое слово отсутствует");
+                }
+        }
+
     }
 }
