@@ -8,6 +8,7 @@ namespace StringSearcher
         static void Main(string[] args)
         {
             StringSearcher word = new StringSearcher();
+            word.Print += DisplayMessage;
             string s = null;
             Console.WriteLine("Введите список слов");
 
@@ -20,5 +21,10 @@ namespace StringSearcher
             word.Search(str);
             Console.ReadKey();
         }
+        private static void DisplayMessage(string word)
+        {
+            Console.WriteLine(word);
+        }
+
     }
 }

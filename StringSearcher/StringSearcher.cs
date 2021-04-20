@@ -10,7 +10,7 @@ namespace StringSearcher
     {
         public static bool f_is = false;
         public delegate void Word(string word);
-        Word wrd = Print;
+        public event Word Print;
 
 
         public void Search(List<string> str)
@@ -18,26 +18,23 @@ namespace StringSearcher
             Console.WriteLine("Введите искомое слово");
             string word = Console.ReadLine();
             foreach (string s in str)
-            {
+            { 
                 if (word == s)
                 {
                     f_is = true;
                 }
             }
-            wrd(word);
-        }
-
-        private static void Print(string word)
-        {
             if (f_is == true)
             {
-                Console.WriteLine($"Искомое слово {word} есть в списке");
+                //Console.WriteLine($"Искомое слово {word} есть в списке");
+                Print?.Invoke($"Искомое слово {word} есть в списке");
             }
             else
             {
-                Console.WriteLine("Искомое слово отсутствует");
+                //Console.WriteLine("Искомое слово отсутствует");
+                Print?.Invoke("Искомое слово отсутствует");
             }
-        }
 
+        }
     }
 }
