@@ -8,11 +8,11 @@ namespace StringSearcher
 {
     class StringSearcher
     {
-        public delegate string Word(string word);
+        public static bool f_is = false;
+        public delegate void Word(string word);
         Word wrd = Print;
 
 
-        
         public void Search(List<string> str)
         {
             Console.WriteLine("Введите искомое слово");
@@ -21,22 +21,27 @@ namespace StringSearcher
             {
                 if (word == s)
                 {
+                    f_is = true;
                     wrd(word);
                     break;
                 }
             }
         }
 
-        private static string Print(string word)
+        private static void Print(string word)
         {
-                if (true)
-                {
-                    return ($"Искомое слово {word} есть в списке");
-                }
-                else
-                {
-                    return ("Искомое слово отсутствует");
-                }
+            if (/*f_is ==*/ false)
+            {
+                Console.WriteLine($"Искомое слово {word} есть в списке");
+                //string s = ;
+                //return s;
+            }
+            else
+            {
+                Console.WriteLine("Искомое слово отсутствует");
+               //string s = "Искомое слово отсутствует";
+               //return (s);
+            }
         }
 
     }
