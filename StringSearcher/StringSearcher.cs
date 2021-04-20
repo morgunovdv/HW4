@@ -26,12 +26,10 @@ namespace StringSearcher
             }
             if (f_is == true)
             {
-                //Console.WriteLine($"Искомое слово {word} есть в списке");
                 Print?.Invoke($"Искомое слово {word} есть в списке");
             }
             else
             {
-                //Console.WriteLine("Искомое слово отсутствует");
                 Print?.Invoke("Искомое слово отсутствует");
             }
 
