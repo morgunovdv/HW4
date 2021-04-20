@@ -22,25 +22,20 @@ namespace StringSearcher
                 if (word == s)
                 {
                     f_is = true;
-                    wrd(word);
-                    break;
                 }
             }
+            wrd(word);
         }
 
         private static void Print(string word)
         {
-            if (/*f_is ==*/ false)
+            if (f_is == true)
             {
                 Console.WriteLine($"Искомое слово {word} есть в списке");
-                //string s = ;
-                //return s;
             }
             else
             {
                 Console.WriteLine("Искомое слово отсутствует");
-               //string s = "Искомое слово отсутствует";
-               //return (s);
             }
         }
 
